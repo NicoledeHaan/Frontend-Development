@@ -1,0 +1,89 @@
+/* fonts van Google */
+html{
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background-color: #f4623a;
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+section.center{
+   text-align: center; 
+}
+
+img {
+    width:100%;
+}
+
+/* Alles van me Nav */
+nav{
+    background: white;
+}
+
+nav ul{
+    list-style-type: none;
+    padding:0;
+    display: flex; /*flexbox*/
+    justify-content: flex-end;
+    border-radius: 1rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 1rem;
+}
+
+a:hover{
+    background-color: #d5d5d5;
+    color: #f4623a;
+}
+
+/* nav responsive */
+/* bron: https://www.youtube.com/watch?v=H-AmJSMcNfI */
+@media (min-width: 1rem) {
+    nav ul{
+        height: 0,2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (min-width: 27rem) {
+    nav ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* opdrachten responsive*/
+@media (min-width: 42rem) {
+section.section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: row;
+    margin: 2rem;
+    text-align: left;
+}
+
+/* overmij responsive */
+@media (min-width: 35rem) {
+    section.section2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: row;
+    margin: 2rem;
+    text-align: left;
+}
+
+    
+article{
+    padding: 1.5em;
+    padding-bottom: 2rem;
+}  
