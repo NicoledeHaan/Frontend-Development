@@ -9,7 +9,10 @@
 </head>
 <body>
     <header>
-        <nav>
+       <div class="menu">
+           <span class="link"></span> 
+       </div>
+        <nav class="navigatie">
         <!-- Class="active" zodat je weet op welke pagina je je bevindt Bron: https://www.w3schools.com/css/css_navbar.asp -->
             <ul>
                 <li> <a href="index.html">Home</a> </li>
@@ -27,11 +30,29 @@
         <section class="center">
             <article>
                 <h1>Contact</h1>
-                <p>Voel je vrij om mij te contacteren, ik ben altijd opzoek naar nieuwe uitdagingen!</p>
+                <p>Voel je vrij om mij te contacteren, ik ben altijd opzoek naar nieuwe uitdagingen! Je kan mij contacten via mijn telefoonnummer en/of emailadress hieronder of door het formulier hiernaast in te vullen. </p>
                 <p> +31 6 37445081</p>
                 <a href="mailto:nicoledehaan3@gmail.com">Nicoledehaan3@gmail.com</a>
             </article>
+            <form action="">
+                <fieldset> 
+                    <legend>Persoonlijke gegevens</legend>
+                    <label for="name">Naam</label>
+                    <input id="name" required type="text"> 
+                    
+                    <label for="mail">E-mail</label>
+                    <input id="mail" required type="mail"> 
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Uw bericht</legend>
+                    <label for="message">Bericht</label>
+                    <input id="message" required type="text">
+                </fieldset>
+                <button>Verstuur</button>
+            </form>
         </section>
-    </main>    
+    </main> 
+    <script src="Java.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+/*------------------------------------------------------------------------------------------------------------ALGEMEEN------------------------------------------------------------------------------------------------------*/
+
 /* fonts van Google */
 html{
     font-family: 'Quicksand', sans-serif;
@@ -12,6 +14,16 @@ h1{
     text-align: center;
 }
 
+h1:hover{
+    transform: rotate(180deg); 
+    transition: 5s;
+    color: black;
+}
+
+h2:hover{
+    transform: rotate(25deg);
+}
+
 section.center{
    text-align: center; 
 }
@@ -20,12 +32,30 @@ img {
     width:100%;
 }
 
+img:hover{
+    border-radius: 50%;
+    transition-duration: 3s;
+}
+
 video{
     width:100%;
 }
-/* Alles van me Nav */
+
+video:hover{
+    border-radius: 50%;
+    transition-duration: 3s;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------ALLES VAN ME NAV-----------------------------------------------------------------------------------------------------*/
 nav{
     background: white;
+    transform: translateX(-100%);
+}
+
+nav.active{
+    transform: translateX(0);
 }
 
 nav ul{
@@ -46,8 +76,54 @@ nav a{
 a:hover{
     background-color: #d5d5d5;
     color: #f4623a;
+    transform: skew(25deg);
 }
 
+
+
+/*-------------------------------------------------------------------------------------------------OPDRACHTEN RESPONSIVE----------------------------------------------------------------------------------------------------*/
+@media (min-width: 42rem) {
+section.section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: row;
+    margin: 2rem;
+    text-align: left;
+}
+
+    
+    
+/*-----------------------------------------------------------------------------------------------OVERMIJ EN INDEX RESPONSIVE------------------------------------------------------------------------------------------------*/
+@media (min-width: 35rem) {
+    section.section2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: row;
+    margin: 2rem;
+    text-align: left;
+}
+
+    
+article{
+    padding: 1.5em;
+    padding-bottom: 2rem;
+}  
+
+    
+    
+/*---------------------------------------------------------------------------------------------------------FORMULIER--------------------------------------------------------------------------------------------------------*/
+
+    
+
+    
+/*-----------------------------------------------------------------------------------------------HAMBURGER MENU/RESPONSIVE--------------------------------------------------------------------------------------------------*/
+
+/* 
+  Here we style our hamburger wrapper, we use position relative because we want to position
+  the span elements, which live inside of our wrapper, absolute. This allows us to place the
+  ::before at the top of the div and the ::after at the bottom of the div.
+*/
+    
 /* nav responsive */
 /* bron: https://www.youtube.com/watch?v=H-AmJSMcNfI */
 @media (min-width: 1rem) {
@@ -64,29 +140,59 @@ a:hover{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
-
-/* opdrachten responsive*/
-@media (min-width: 42rem) {
-section.section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row: row;
-    margin: 2rem;
-    text-align: left;
-}
-
-/* overmij responsive */
-@media (min-width: 35rem) {
-    section.section2{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row: row;
-    margin: 2rem;
-    text-align: left;
-}
-
     
-article{
-    padding: 1.5em;
-    padding-bottom: 2rem;
-}  
+div {
+  width: 3rem;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0 0 1rem;
+}
+/* These become our three lines, before becomes the first, 'span' the second and after the third */
+span {
+  height: .4rem;
+  width: 100%;
+  display: block;
+  background: rgba(75, 108, 110);
+  border-radius: .5rem;
+}
+/* Define general styles for the ::before and ::after */
+span::before, span::after {
+  content: '';
+  height: .4rem;
+  width: 100%;
+  position: absolute;
+  background: rgba(75, 108, 110);
+  border-radius: .5rem;
+  transition: .5s;
+}
+/* Position ::before at the top of the div */
+span::before {
+  top: 0px;
+}
+/* Position ::after at the bottom of the div */
+span::after {
+  bottom: 0px
+}
+/* 
+  Define styles which will be applied when the class 'active' is added to the div wrapper.
+  We can actually pass multiple classes to HTML elements, this way we can style the element which hash
+  both classes of 'hamburger' and 'active'
+*/
+.menu.active span {
+  background:rgba(0,0,0,0);
+  transition: .5s;
+}
+/* We can then also pass specific styles which are only applicable when .hamburger.active exists */
+.menu.active span::before {
+  transform:rotate(135deg);
+  top: 12px;
+}
+
+.menu.active span::after {
+  top: 12px;
+  transform:rotate(225deg);
+}
+
+/***** end of hamburger styles *****/
