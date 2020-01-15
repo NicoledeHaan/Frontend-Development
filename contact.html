@@ -21,19 +21,20 @@
 
                 <li> <a href="opdrachten.html">Opdrachten</a> </li>
 
-                <li> <a href="contact.html" class="active">Contact</a> </li>
+                <li> <a href="contact.html">Contact</a> </li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section class="center">
+        <section class="section2">
             <article>
                 <h1>Contact</h1>
                 <p>Voel je vrij om mij te contacteren, ik ben altijd opzoek naar nieuwe uitdagingen! Je kan mij contacten via mijn telefoonnummer en/of emailadress hieronder of door het formulier hiernaast in te vullen. </p>
                 <p> +31 6 37445081</p>
                 <a href="mailto:nicoledehaan3@gmail.com">Nicoledehaan3@gmail.com</a>
             </article>
+            <article>
             <form action="">
                 <fieldset> 
                     <legend>Persoonlijke gegevens</legend>
@@ -46,13 +47,24 @@
                 
                 <fieldset>
                     <legend>Uw bericht</legend>
+                    <label for="topic">Onderwerp</label>
+                    <input id="topic" required type="text"> 
+                    
                     <label for="message">Bericht</label>
                     <input id="message" required type="text">
+                    
+                    <p>Hou mij op de hoogte van de updates van deze site</p>
+                    <input type="checkbox">
                 </fieldset>
                 <button>Verstuur</button>
             </form>
+            </article>
         </section>
     </main> 
+    <footer>
+        <p>© Nicole de Haan | 500798322 | Klas: 206</p>
+        <p>Frontend Development | Vasilis van Gemert | Blok: WEB</p>
+    </footer>
     <script src="Java.js"></script>
 </body>
 </html>
