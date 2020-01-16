@@ -76,6 +76,11 @@ nav{
     transform: translateX(-100%); /* verplaatst me nav horizontaal */
     display: none;
     }
+    nav ul{
+        height: 0,2rem;
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 nav.active{
@@ -201,15 +206,6 @@ button:focus {
     
     
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------HAMBURGER MENU/RESPONSIVE----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-@media (max-width: 40rem) /*Zodra het scherm tot 40rem is krijg je een hamburger menu en 1 koloms layout*/
-    { 
-    nav ul{
-        height: 0,2rem;
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
 @media (min-width: 40rem) /*Zodra het scherm het scherm groter dan 40rem is krijg je een volledige nav te zien met een 2 koloms layout*/
     { 
     .menu{
