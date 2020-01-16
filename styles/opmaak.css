@@ -1,0 +1,299 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ALGEMEEN--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* fonts van Google */
+html{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+body{
+    background-color: #f4623a;
+    color: white;
+}
+
+h1, legend{
+    text-align: center;
+}
+
+.active1{
+    text-decoration: underline;
+}
+
+h1:hover, legend:hover{
+    transform: rotate(180deg); 
+    transition: 5s;
+    color: black;
+}
+
+h2:hover{
+    transform: rotate(25deg);
+}
+
+footer::first-letter{
+    color: #000000;
+}
+
+img {
+    width:100%;
+}
+
+img:hover{
+    border-radius: 50%;
+    transition-duration: 3s;
+}
+
+video{
+    width:100%;
+}
+
+video:hover{
+    border-radius: 50%;
+    transition-duration: 3s;
+}
+
+#index{ /*https://www.youtube.com/watch?v=-c94pr41jaI&t=543s*/
+    background: url(../img/bg-foto.jpg), 
+        linear-gradient(steelblue, firebrick);
+    background-blend-mode: overlay;
+    
+    background-position: center;
+    background-attachment: fixed; /* zodat de achtergrond afb niet mee scrollt met rest van de pagina */
+    background-size:cover; /* zorgt ervoor dat de afbeelding over de hele pagina covert */
+    background-repeat: no-repeat;
+    color: #ffffff;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ALLES VAN ME NAV----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+nav{
+    background: white;
+}
+
+@media (max-width: 40rem) {
+nav{
+    background: white;
+    transform: translateX(-100%); /* verplaatst me nav horizontaal */
+    display: none;
+    }
+}
+
+nav.active{
+    transform: translateX(0); /* nu komt me nav tevoorschijn */
+    display: block;
+}
+
+nav ul{
+    list-style-type: none;
+    padding:0;
+    display: flex; /*flexbox*/
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 1rem;
+}
+
+a:hover{
+    background-color: #d5d5d5;
+    color: #f4623a;
+    transform: skew(25deg); /* hover over me nav en het staat schuin */
+} 
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------HOME----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+section.section3{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------OPDRACHTEN RESPONSIVE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 42rem) {
+section.section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: row;
+    margin: 2rem;
+    text-align: left;
+}
+}
+  
+
+    
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------OVERMIJ, INDEX, CONTACT RESPONSIVE---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 40rem) {
+    section.section2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: row;
+    margin: 2rem;
+    text-align: left;
+}
+}
+    
+article, fieldset{
+    padding: 1.5em;
+    padding-bottom: 2rem;
+}  
+
+    
+    
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FORMULIER------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*BRON: https://codepen.io/joostf/pen/VKyPxk?editors=1100 */
+form {
+  box-sizing: border-box;
+  display:flex;
+  flex-direction:column;
+  padding:1em;
+}
+    
+fieldset {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-bottom: 1em;
+  border: none;
+}
+    
+legend {
+  font-weight:bold;
+}
+    
+input {
+  border-color:#000;
+  padding:.25em;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  width:100%;
+}
+
+input:valid {
+  border-color:green;
+  background: lightgreen;
+} 
+    
+input:focus {
+  transform: scale(1.01, 1.01);
+}
+ 
+button {
+  font-size: 1.25em;
+  flex:0 0 2em;
+  transition:all .2s 1s;
+  opacity:0;
+  width:6em;
+}
+    
+form:valid button {
+  opacity:1;
+}
+    
+button:focus {
+  transform: scale(1.1, 1.1);
+}
+  
+    
+    
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------HAMBURGER MENU/RESPONSIVE----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 40rem) /*Zodra het scherm tot 40rem is krijg je een hamburger menu en 1 koloms layout*/
+    { 
+    nav ul{
+        height: 0,2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (min-width: 40rem) /*Zodra het scherm het scherm groter dan 40rem is krijg je een volledige nav te zien met een 2 koloms layout*/
+    { 
+    .menu{
+        visibility: hidden;
+    }
+    nav{
+        position: fixed; /* staat vast */
+        top: 0; 
+        margin-bottom: 10%;
+        width: 100%;
+        transition: 0.1s;
+    }
+    nav ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    main /* 10% vanaf bovenkant scherm naar beneden*/
+        {
+        margin-top: 10%;
+    } 
+}
+    
+
+/* BRON: https://codepen.io/Guilano/pen/jOOgZKE */
+div /*dit is de div waar de hamburger menu in zit*/
+
+{
+  width: 3rem;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0 0 1rem;
+}
+
+/* 
+Dit worden onze drie lijnen, voordat de eerste wordt, 'overspant' de tweede en na de derde*/
+span {
+  height: .4rem;
+  width: 100%;
+  display: block;
+  background: rgba(75, 108, 110);
+  border-radius: .5rem;
+}
+
+/* before-> eerste streep, after -> 3e streep*/
+span::before, span::after {
+  content: '';
+  height: .4rem;
+  width: 100%;
+  position: absolute;
+  background: rgba(75, 108, 110);
+  border-radius: .5rem;
+  transition: .5s;
+}
+
+span::before /* plaatsing streepje 1 */ {
+  top: 0px;
+}
+
+span::after /* Plaatsing streepje2*/{
+  bottom: 0px
+}
+
+.menu.active span /*middelste streep doorzichtig*/ {
+  background:rgba(0,0,0,0);
+  transition: .5s;
+}
+
+.menu.active span::before /*streepje 1 draait*/ { 
+  transform:rotate(135deg);
+  top: 12px;
+}
+
+.menu.active span::after /*streepje 3 draait*/ {
+  top: 12px;
+  transform:rotate(225deg);
+}
+
+
+    
+    
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FOOTER-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+footer{
+    text-align: center;
+}
