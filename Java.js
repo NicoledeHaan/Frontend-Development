@@ -2,6 +2,8 @@
 /*eslint-env browser*/
 /*eslint 'no-console':0*/
 
+/*BRON: https://codepen.io/Guilano/pen/jOOgZKE */
+
 var menu;
 var navigatie;
 
