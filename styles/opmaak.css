@@ -5,32 +5,75 @@ html{
     font-family: 'Quicksand', sans-serif;
 }
 
-
 body{
-    background-color: #f4623a;
+    background-color: #f4f4f4;
+    margin: 0px;
+}
+
+h1{
+    text-shadow: 2px 1px #f4623a;
+    margin-top: 13%;
+}
+
+h2, h3, legend{
+    color: black;
+}
+
+h1 {
+    text-align: center;
+}
+
+article > img:hover{
+    transform: scale(1.05);
+    border-radius: 50%;
+    transition-duration: 3s;
+}
+
+article > p{
+    font-family: 'Mo', sans-serif;
+}
+
+section:nth-of-type(odd){
+    background: #f4623a;
     color: white;
 }
 
-h1, legend{
-    text-align: center;
+a[href="mailto:nicoledehaan3@gmail.com"]:hover {
+    color: #f4623a;
+    background-color: #f4f4f4;
+}
+
+.home{
+    color: white;
+}
+
+.kolom, .opdracht{
+    background-color: white;
+    color: grey;
+}
+
+img[alt*="Foto van Nicole de Haan"]{
+    border: 4px solid #f4623a;
+    box-shadow: 5px 5px 2px #afaeab;
 }
 
 .active1{
     text-decoration: underline;
 }
 
-h1:hover, legend:hover{
+h1:hover {
     transform: rotate(180deg); 
     transition: 5s;
     color: black;
 }
 
-h2:hover{
+article > h2:hover{
     transform: rotate(25deg);
 }
 
-li:nth-of-type(odd){
-    background-color: grey;
+div > h3, legend{
+    font-size: 1.2rem;
+    text-align: left;
 }
 
 footer::first-letter{
@@ -39,11 +82,6 @@ footer::first-letter{
 
 img {
     width:100%;
-}
-
-img:hover{
-    border-radius: 50%;
-    transition-duration: 3s;
 }
 
 video{
@@ -64,7 +102,7 @@ video:hover{
     background-attachment: fixed; /* zodat de achtergrond afb niet mee scrollt met rest van de pagina */
     background-size:cover; /* zorgt ervoor dat de afbeelding over de hele pagina covert */
     background-repeat: no-repeat;
-    color: #ffffff;
+    color: white;
 }
 
 
@@ -72,6 +110,7 @@ video:hover{
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ALLES VAN ME NAV----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 nav{
     background: white;
+    text-align: center;
 }
 
 @media (max-width: 40rem) {
@@ -97,29 +136,33 @@ nav.active{
     display: block;
 }
 
-nav ul{
+nav > ul{
     list-style-type: none;
-    padding:0;
     display: flex; /*flexbox*/
 }
 
 nav a{
     text-decoration: none;
-    color: black;
+    color: #f4623a;
     display: block;
     padding: 1rem;
+    font-size: 24px;
 }
 
 a:hover{
     background-color: #d5d5d5;
-    color: #f4623a;
+    color: black;
     transform: skew(25deg); /* hover over me nav en het staat schuin */
 } 
+
+li:first-child {
+    flex-grow: 1;
+}
 
 
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------HOME----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-section.section3{
+.home{
     margin-left: auto;
     margin-right: auto;
     width: 30em;
@@ -129,25 +172,27 @@ section.section3{
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------OPDRACHTEN RESPONSIVE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 @media (min-width: 42rem) {
-section.section{
+section.opdracht{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row: row;
     margin: 2rem;
     text-align: left;
+    grid-gap: 2em;
 }
 }
   
 
     
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------OVERMIJ, INDEX, CONTACT RESPONSIVE---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-@media (min-width: 40rem) {
-    section.section2{
+@media (min-width: 48rem) {
+.kolom {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row: row;
     margin: 2rem;
     text-align: left;
+    grid-gap: 1em; 
 }
 }
     
@@ -180,7 +225,7 @@ legend {
 }
     
 input {
-  border-color:#000;
+  border-color: #f4623a;
   padding:.25em;
   font-size: 1.25em;
   margin-bottom: 1em;
@@ -202,6 +247,11 @@ button {
   transition:all .2s 1s;
   opacity:0;
   width:6em;
+  background-color: #f4623a;
+  color: white;  
+  text-align: center;
+  box-shadow: 5px 5px 2px #afaeab;  
+  margin: auto;
 }
     
 form:valid button {
@@ -209,7 +259,7 @@ form:valid button {
 }
     
 button:focus {
-  transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
   
     
@@ -232,28 +282,20 @@ button:focus {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     
-    main /* 10% vanaf bovenkant scherm naar beneden*/
-        {
+    main /* 10% vanaf bovenkant scherm naar beneden*/{
         margin-top: 10%;
     } 
 }
-    
-
 /* BRON: https://www.youtube.com/watch?v=gXkqy0b4M5g&t=1335s%2A%2F */
-div /*dit is de div waar de hamburger menu in zit*/
-{
-  width: 3rem;
-  height: 2rem;
-  position: relative;
-  display: block;
-  align-items: center;
-  margin: 1.5rem 0 0 1rem;
-}
-
 
   
     
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------FOOTER-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 footer{
     text-align: center;
+    color:  #f4623a;
+}
+
+footer.index{
+    color: white;
 }
